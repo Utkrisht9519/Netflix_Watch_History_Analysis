@@ -1,3 +1,6 @@
+import os
+print(os.listdir())
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
@@ -7,7 +10,11 @@ st.set_page_config(page_title="Netflix BI Dashboard", layout="wide")
 st.title("Netflix Watch History BI Dashboard")
 
 # Load dataset
-df = pd.read_csv("BI&A - Tableau Quiz Dataset - For Candidates.csv")
+df = pd.read_csv("Netflix_Watch_History_Dataset.csv")
+
+st.success("Dataset loaded successfully!")
+
+st.dataframe(df.head())
 
 # ---------------- Chart 1 ----------------
 st.subheader("Total Watch Time by Subscription Type")
